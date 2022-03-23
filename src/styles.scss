@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "swiper/css";
+@import "swiper/css/navigation";
+
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 6, 94, 1) 25%,
+    rgba(91, 9, 121, 1) 47%,
+    rgba(95, 10, 134, 1) 99%
+  );
+}

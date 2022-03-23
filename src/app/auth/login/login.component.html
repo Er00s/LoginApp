@@ -1,0 +1,45 @@
+<div class="main-container">
+  <div class="wrapper">
+    <form
+      class="form-signin"
+      autocomplete="off"
+      (ngSubmit)="login()"
+      [formGroup]="loginForm"
+    >
+      <div>
+        <img src="assets/LOGO1.png" style="width: 50%" />
+      </div>
+
+      <div class="inputs-container">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          formControlName="username"
+        />
+
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+
+      <div style="justify-content: space-between">
+        <label class="checkbox ms-3">
+          <input
+            type="checkbox"
+            value="remember-me"
+            id="checkbox-signup"
+            type="checkbox"
+            formControlName="remember"
+          />
+          Remember
+        </label>
+
+        <button type="submit" class="btn btn-outline-secondary">Log In</button>
+      </div>
+    </form>
+  </div>
+</div>

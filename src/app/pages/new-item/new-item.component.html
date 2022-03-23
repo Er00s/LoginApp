@@ -1,0 +1,182 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row mt-4 align-self-center">
+      <form
+        class="row"
+        autocomplete="off"
+        (ngSubmit)="postItem()"
+        [formGroup]="itemForm"
+      >
+        <div class="col-6">
+          <div class="row">
+            <div class="container">
+              <swiper [config]="swiperConfig">
+                <ng-template swiperSlide *ngFor="let img of images; index as i"
+                  ><button
+                    type="button"
+                    class="ghost-button z-index-1"
+                    (click)="deleteImgToLoad(i)"
+                  >
+                    <fa-icon [icon]="faCircleXmark" size="lg"></fa-icon>
+                  </button>
+                  <img
+                    [src]="img"
+                    class="d-block w-100 img-fluid"
+                    alt="..."
+                    height="420"
+                    width="327"
+                  />
+                </ng-template>
+                <ng-template swiperSlide *ngIf="images.length < 3">
+                  <input
+                    type="file"
+                    accept=".png, .jpg, .jpeg"
+                    multiple
+                    style="height: 410px; width: 327px"
+                    formControlName="pictures"
+                    id="inputFile"
+                    (change)="cargarImagen($event)"
+                  />
+
+                  <label for="inputFile" class="label-img"
+                    ><img
+                      src="https://icon-library.com/images/add-image-icon-png/add-image-icon-png-15.jpg"
+                      alt=""
+                      style="width: 80%; height: auto"
+                    />
+                  </label>
+                </ng-template>
+              </swiper>
+            </div>
+          </div>
+          <div class="row">
+            <div class="container text-center mt-2">
+              <p style="color: white">
+                *Archivos JPG, JPEG, PNG
+                <br />
+                *Maximo de 3 imagenes
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="product-text">
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="text"
+                  class="form__field"
+                  placeholder="version"
+                  name="SKU"
+                  id="SKU"
+                  required
+                  formControlName="SKU"
+                />
+                <label for="name" class="form__label">SKU</label>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="number"
+                  class="form__field"
+                  placeholder="version"
+                  name="code"
+                  id="code"
+                  required
+                  formControlName="code"
+                />
+                <label for="name" class="form__label">Codigo</label>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="text"
+                  class="form__field"
+                  placeholder="version"
+                  name="name"
+                  id="name"
+                  required
+                  formControlName="name"
+                />
+                <label for="name" class="form__label">Nombre</label>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="text"
+                  class="form__field"
+                  placeholder="version"
+                  name="description"
+                  id="description"
+                  required
+                  formControlName="description"
+                />
+                <label for="name" class="form__label">Descripcion</label>
+              </div>
+            </div>
+
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="number"
+                  class="form__field"
+                  placeholder="version"
+                  name="price"
+                  id="price"
+                  required
+                  formControlName="price"
+                />
+                <label for="name" class="form__label">Precio</label>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="text"
+                  class="form__field"
+                  placeholder="version"
+                  name="currency"
+                  id="currency"
+                  required
+                  formControlName="currency"
+                />
+                <label for="name" class="form__label">Divisa</label>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="form__group field">
+                <input
+                  type="text"
+                  class="form__field"
+                  placeholder="version"
+                  name="__v"
+                  id="__v"
+                  required
+                  formControlName="__v"
+                />
+                <label for="name" class="form__label">Version</label>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <button id="create-article" type="submit">Crear Ariticulo</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="container">
+  <swiper [config]="swiperConfig">
+    <ng-template swiperSlide *ngFor="let img of images"
+      ><img [src]="img" class="d-block w-100" alt="..."
+    /></ng-template>
+  </swiper>
+</div>
+ -->

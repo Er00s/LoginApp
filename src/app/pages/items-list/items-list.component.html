@@ -1,0 +1,33 @@
+<div class="main-container" infiniteScroll (scrolled)="onScrollDown()">
+  <ng-container *ngFor="let item of items">
+    <div class="wrapper">
+      <div class="product-img">
+        <swiper [config]="swiperConfig">
+          <ng-template swiperSlide *ngFor="let img of item?.pictures"
+            ><img
+              [src]="img"
+              class="d-block w-100"
+              alt="..."
+              height="420"
+              width="327"
+          /></ng-template>
+        </swiper>
+        <!--     <img [src]="item?.pictures[0]" height="420" width="327"> -->
+      </div>
+      <div class="product-info">
+        <div class="product-text">
+          <h1>{{ item.name }}</h1>
+          <h2>by Churrasco</h2>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="product-price-btn">
+          <p>
+            <span>{{ item.price }}</span
+            >{{ item.currency }}
+          </p>
+          <button type="button">buy now</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
